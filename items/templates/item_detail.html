@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>Item Details</h4>
+
+<table class="table table-bordered">
+
+<tr><th>Name</th><td>{{ item.name }}</td></tr>
+<tr><th>Description</th><td>{{ item.description }}</td></tr>
+<tr><th>Location</th><td>{{ item.location_found }}</td></tr>
+<tr><th>Status</th><td>{{ item.status }}</td></tr>
+
+</table>
+
+<div class="text-center">
+    <a href="/item/{{ item.id }}/claim/" class="btn btn-primary">Submit Claim</a>
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+</div>
+
+{% endblock %}

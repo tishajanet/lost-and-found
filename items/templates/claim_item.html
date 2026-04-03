@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>Claim Form</h4>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <table class="table">
+
+    <tr>
+        <td>Name:</td>
+        <td>{{ item.name }}</td>
+    </tr>
+
+    <tr>
+        <td>Description:</td>
+        <td>{{ item.description }}</td>
+    </tr>
+
+    <tr>
+        <td>Location Found:</td>
+        <td>{{ item.location_found }}</td>
+    </tr>
+
+    <tr>
+        <td>Verification:</td>
+        <td>
+            <textarea name="verification_text" class="form-control"></textarea>
+        </td>
+    </tr>
+
+    </table>
+
+    <button class="btn btn-success">Submit Claim</button>
+    <a href="/" class="btn btn-secondary">Back</a>
+
+</form>
+
+{% endblock %}

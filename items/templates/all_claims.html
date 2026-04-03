@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h4>All Claims (Security)</h4>
+
+<table class="table table-bordered">
+
+<tr>
+    <th>User</th>
+    <th>Item</th>
+    <th>Status</th>
+</tr>
+
+{% for claim in claims %}
+<tr>
+    <td>{{ claim.user.username }}</td>
+    <td>{{ claim.item.name }}</td>
+    <td>{{ claim.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/" class="btn btn-secondary">Back</a>
+
+{% endblock %}
